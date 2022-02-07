@@ -2021,10 +2021,10 @@ index 7567a8bf848c82b27383f084056cb43c41df6d0c..dc23041e0277396fc0a6a01d68bf32e6
  
      @Nullable
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
-index 5fb475b3ccaa98861e2c817b37cd1740e5bfed8d..c0e1d53f41bf8ed0de8cca901ea75483bbada3bc 100644
+index f2deb875992ad2d5c9dbcfe9ee7071a773fed684..98183580ce6ded6b8b19230a85118676d82b03d2 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
-@@ -2119,37 +2119,43 @@ public class CraftWorld extends CraftRegionAccessor implements World {
+@@ -2154,37 +2154,43 @@ public class CraftWorld extends CraftRegionAccessor implements World {
      // Spigot start
      @Override
      public int getViewDistance() {
