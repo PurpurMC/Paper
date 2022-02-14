@@ -83,7 +83,7 @@ index 46cb6fff4df88dd922c3d7a761493cfee1431709..afef3ea6d1ae5f145261eaae3da720fd
      // Paper start - optimise checkDespawn
      public static final int GENERAL_AREA_MAP_SQUARE_RADIUS = 40;
 diff --git a/src/main/java/net/minecraft/server/level/ServerChunkCache.java b/src/main/java/net/minecraft/server/level/ServerChunkCache.java
-index 5bb7c2a7955c2188304dd917457afbe3354f8b2d..b0ced77da807d715a39c04708859a12729883939 100644
+index 294051f916adf56dfc0ccc254ea538ecd8d6cf6d..e20fc528b85a8278bffab32845daac2208836748 100644
 --- a/src/main/java/net/minecraft/server/level/ServerChunkCache.java
 +++ b/src/main/java/net/minecraft/server/level/ServerChunkCache.java
 @@ -50,6 +50,7 @@ import org.apache.logging.log4j.LogManager;
