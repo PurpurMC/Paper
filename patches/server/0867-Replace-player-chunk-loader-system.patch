@@ -1807,7 +1807,7 @@ index b143240699f185263728a9241eac52c643225f04..dd4fc5e0d03e07ce300f3e327522401e
                  return true;
              } else {
 diff --git a/src/main/java/net/minecraft/server/level/ServerLevel.java b/src/main/java/net/minecraft/server/level/ServerLevel.java
-index a2abb8aa1a257ccd2b5dbddc037fffc6eb600758..954a3d9afe32d76ec4afd0722be582b89b709c8b 100644
+index e9de8f8ac62dab370c28b4ef6a4b61c8d3ebbb15..fe22c7a8d30f99313d25fd6391305fb077f8df84 100644
 --- a/src/main/java/net/minecraft/server/level/ServerLevel.java
 +++ b/src/main/java/net/minecraft/server/level/ServerLevel.java
 @@ -655,7 +655,7 @@ public class ServerLevel extends Level implements WorldGenLevel {
@@ -2021,10 +2021,10 @@ index 7567a8bf848c82b27383f084056cb43c41df6d0c..dc23041e0277396fc0a6a01d68bf32e6
  
      @Nullable
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
-index 72f395c8d88c7dd77f39c7ae29dbfcaa683ecc0a..121b6bf4099a4ea6a71664fd152a865056825f59 100644
+index 23bd74836e8396720747540829c7b8e27cfb00bd..dfd32e1213056ed1061f647c95fd71bfbab41294 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftWorld.java
-@@ -2191,37 +2191,43 @@ public class CraftWorld extends CraftRegionAccessor implements World {
+@@ -2215,37 +2215,43 @@ public class CraftWorld extends CraftRegionAccessor implements World {
      // Spigot start
      @Override
      public int getViewDistance() {
