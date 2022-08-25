@@ -8,7 +8,7 @@ can follow to make the approval process go more smoothly.
 
 Paper will routinely modify your PR, whether it's a quick rebase or to take care
 of any minor nitpicks we might have. Often, it's better for us to solve these
-problems for you than make you go back and forth trying to fix it yourself.
+problems for you than make you go back and forth trying to fix them yourself.
 
 Unfortunately, if you use an organization for your PR, it prevents Paper from
 modifying it. This requires us to manually merge your PR, resulting in us
@@ -29,7 +29,7 @@ you will most likely use this for WSL), `homebrew` (macOS / Linux), and more:
 - `git` (package `git` everywhere);
 - A Java 17 or later JDK (packages vary, use Google/DuckDuckGo/etc.).
   - [Adoptium](https://adoptium.net/) has builds for most operating systems.
-  - Paper requires JDK 17 to build, however makes use of Gradle's
+  - Paper requires JDK 17 to build, however, makes use of Gradle's
     [Toolchains](https://docs.gradle.org/current/userguide/toolchains.html)
     feature to allow building with only JRE 8 or later installed. (Gradle will
     automatically provision JDK 17 for compilation if it cannot find an existing
@@ -93,7 +93,7 @@ patch;
 Your commit will be converted into a patch that you can then PR into Paper.
 
 > ❗ Please note that if you have some specific implementation detail you'd like
-> to document, you should do so in the patch message *or* in comments.
+> to document, you should do so in the patch message *or* comments.
 
 ## Modifying Patches
 
@@ -184,7 +184,7 @@ These steps assume the `origin` remote is your fork of this repository and `upst
 1. Checkout feature/fix branch and rebase on master: `git checkout patch-branch && git rebase master`.
 1. Apply updated patches: `./gradlew applyPatches`.
 1. If there are conflicts, fix them.
-1. If your PR creates new patches instead of modifying exist ones, in both the `Paper-Server` and `Paper-API` directories, ensure your newly-created patch is the last commit by either:
+1. If your PR creates new patches instead of modifying existing ones, in both the `Paper-Server` and `Paper-API` directories, ensure your newly-created patch is the last commit by either:
     * Renaming the patch file with a large 4-digit number in front (e.g. 9999-Patch-to-add-some-new-stuff.patch), and re-applying patches.
     * Running `git rebase --interactive base` and moving the commits to the end.
 1. Rebuild patches: `./gradlew rebuildPatches`.
@@ -229,11 +229,11 @@ entity.getWorld().explode(new BlockPosition(spawnLocation.getX(), spawnLocation.
 // Paper end
 ```
 
-We generally follow usual Java style (aka. Oracle style), or what is programmed
+We generally follow the usual Java style (aka. Oracle style), or what is programmed
 into most IDEs and formatters by default. There are a few notes, however:
 - It is fine to go over 80 lines as long as it doesn't hurt readability.  
 There are exceptions, especially in Spigot-related files
-- When in doubt or the code around your change is in a clearly different style,
+- When in doubt or the code around your change is in a different style,
 use the same style as the surrounding code.
 
 ## Patch Notes
@@ -241,9 +241,9 @@ use the same style as the surrounding code.
 When submitting patches to Paper, we may ask you to add notes to the patch
 header. While we do not require it for all changes, you should add patch notes
 when the changes you're making are technical, complex, or require an explanation
-of some kind. It is very likely that your patch will remain long after we've all
-forgotten about the details of your PR; patch notes will help us maintain it
-without having to dig back through GitHub history looking for your PR.
+of some kind. Your patch will likely remain long after we've all forgotten about 
+the details of your PR; patch notes will help us maintain it without having to 
+dig back through GitHub history looking for your PR.
 
 These notes should express the intent of your patch, as well as any pertinent
 technical details we should keep in mind long-term. Ultimately, they exist to
@@ -255,8 +255,8 @@ automatically as part of generating the patch file. If you are not
 extremely careful, you should always just `squash` or `amend` a patch (see the
 above sections on modifying patches) and rebuild.
 
-Editing messages and patches by hand is possible, but you should patch and
-rebuild afterwards to make sure you did it correctly. This is slower than just
+Editing messages and patches by hand are possible, but you should patch and
+rebuild afterward to make sure you did it correctly. This is slower than just
 modifying the patches properly after a few times, so you will not really gain
 anything but headaches from doing it by hand.
 
@@ -271,7 +271,7 @@ Subject: [PATCH] revert serverside behavior of keepalives
 This patch intends to bump up the time that a client has to reply to the
 server back to 30 seconds as per pre 1.12.2, which allowed clients
 more than enough time to reply potentially allowing them to be less
-tempermental due to lag spikes on the network thread, e.g. that caused
+temperamental due to lag spikes on the network thread, e.g. that caused
 by plugins that are interacting with netty.
 
 We also add a system property to allow people to tweak how long the server
@@ -290,8 +290,8 @@ index a92bf8967..d0ab87d0f 100644
 ## Obfuscation Helpers
 
 While rarely needed, obfuscation helpers are sometimes useful when it comes
-to unmapped local variables, or poorly named method parameters. In an effort
-to make future updates easier on ourselves, Paper tries to use obfuscation
+to unmapped local variables, or poorly named method parameters. To make 
+future updates easier on ourselves, Paper tries to use obfuscation
 helpers wherever it makes sense. The purpose of these helpers is to make the
 code more readable and maintainable. These helpers should be made easy to
 inline by the JVM wherever possible.
@@ -303,7 +303,7 @@ double d0 = entity.getX(); final double fromX = d0; // Paper - OBFHELPER
 this.someMethod(fromX); // Paper
 ```
 
-While they may not always be done in exactly the same way, the general goal is
+While they may not always be done in the same way, the general goal is
 always to improve readability and maintainability. Use your best judgment and do
 what fits best in your situation.
 
@@ -394,7 +394,7 @@ If you use Maven to build your plugin:
 
 By default, Paper (and upstream) only import files we make changes to. If you
 would like to make changes to a file that isn't present in `Paper-Server`'s
-source directory, you just need to add it to our import script ran during the
+source directory, you just need to add it to our import script that ran during the
 patching process.
 
 1. Save (rebuild) any patches you are in the middle of working on! Their
@@ -409,7 +409,7 @@ the script. Follow the instructions there;
 1. Edit away!
 
 > ❗ This change is temporary! **DO NOT COMMIT CHANGES TO THIS FILE!**  
-> Once you have made your changes to the new file, and rebuilt patches, you may
+> Once you have made your changes to the new file and rebuilt patches, you may
 > undo your changes to `dev-imports.txt`.
 
 Any file modified in a patch file gets automatically imported, so you only need
@@ -422,14 +422,14 @@ To undo your changes to the file, type `git checkout build-data/dev-imports.txt`
 Well, quite simple: You add `[ci skip]` to the start of your commit subject.
 
 This case most often applies to changes to files like `README.md`, this very
-file (`CONTRIBUTING.md`), the `LICENSE.md` file, and so forth.
+file (`CONTRIBUTING.md`), and the `LICENSE.md` file, and so forth.
 
-### Patching and building is *really* slow, what can I do?
+### Patching and building are slow, what can I do?
 
 This only applies if you're running Windows. If you're running a prior Windows
 release, either update to Windows 10 or move to macOS/Linux/BSD.
 
-In order to speed up patching process on Windows, it's recommended you get WSL
+To speed up the patching process on Windows, it's recommended you get WSL
 2. This is available in Windows 10 v2004, build 19041 or higher. (You can check
 your version by running `winver` in the run window (Windows key + R)). If you're
 out of date, update your system with the
@@ -442,10 +442,10 @@ You will most likely want to use the Ubuntu apps. Once it's set up, install the
 required tools with `sudo apt-get update && sudo apt-get install $TOOL_NAMES
 -y`. Replace `$TOOL_NAMES` with the packages found in the
 [requirements](#requirements). You can now clone the repository and do
-everything like usual.
+everything as usual.
 
 > ❗ Do not use the `/mnt/` directory in WSL! Instead, mount the WSL directories
-> in Windows like described here:
+> in Windows as described here:
 > <https://www.howtogeek.com/426749/how-to-access-your-linux-wsl-files-in-windows-10/>
 
 [MiniMappingViewer]: https://minidigger.github.io/MiniMappingViewer/
